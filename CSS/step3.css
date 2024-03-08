@@ -11,13 +11,12 @@
   --Magnolia: hsl(217, 100%, 97%);
   --Alabaster: hsl(231, 100%, 99%);
   --White: hsl(0, 0%, 100%);
-  --para: 16px;
+  --para: 1rem;
   --family: "Ubuntu", "Sans-Serif";
   --fw-semi: 400;
   --fw-bold: 500;
   --fw-xbold: 700;
 }
-
 a, button, li, a:active, a:focus{
   border: none;
   list-style: none;
@@ -27,7 +26,6 @@ a, button, li, a:active, a:focus{
 body {
   background-color: var(--Magnolia);
   font-family: var(--family);
-
 }
 
 main {
@@ -38,7 +36,9 @@ main {
   height: 30vh;
   position: relative;
 }
-
+/* .main-container{
+  height: 75vh;
+} */
 .one,
 .two,
 .three,
@@ -54,14 +54,15 @@ main {
   margin-top: 2rem;
   border: 1px solid var(--White);
 }
-.three{
+.three {
   background-color: var(--Lightblue);
   color: var(--Marineblue);
 }
-.nav-btn :nth-child(1):hover {
+
+/* .nav-btn :nth-child(1):hover {
   background-color: var(--Lightblue);
   color: var(--Marineblue);
-}
+} */
 
 section {
   width: 200px;
@@ -72,25 +73,50 @@ section {
   border-radius: 10px;
 }
 
-.form-control{
-  margin-top: 1rem;
+.box{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: 1px solid var(--Coolgray);
+}
+.box:hover{
+  border: 1px solid var(--Purplishblue);
+  background-color: var(--Magnolia);
+}
+.box-icon{
+  line-height: 14px;
+}
+.box-content h4, .lbox :nth-child(1){
+  color: var(--Marineblue);
+}
+.box-content p{
+  color: var(--Coolgray);
+}
+.box-icon{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+.box b{
+  color: var(--Purplishblue);
+}
+input[type="checkbox"]{
+  width: 25px;
+  height: 30px;
+  border-radius: 10px;
+  accent-color: var(--Purplishblue);
 }
 
-.form-control:focus {
-  box-shadow: none;
-  border: 1px solid var(--Marineblue);
-  outline: none;
-}
-.top h4,
-label {
+.top h4 {
   color: var(--Marineblue);
 }
 p {
   color: var(--Coolgray);
 }
-::placeholder {
-  color: var(--Coolgray) !important;
-}
+
 .next-btn {
   width: 100%;
   position: absolute;
@@ -98,75 +124,28 @@ p {
   background-color: var(--White);
 }
 .next-btn .btn {
-  /* right: -60%; */
   position: relative;
   background-color: var(--Marineblue);
   color: var(--Lightblue);
 }
-
 .next-btn :nth-child(1){
-  background:none;
-  color: var(--Coolgray);
-}
-
-.box{
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px solid var(--Coolgray);
-  justify-content: space-between;
-}
-
-.form-check-input{
-  background-color: var(--Marineblue);
-}
-
-.box:hover{
-  border: 1px solid var(--Marineblue);
-}
-
-.nav-but{
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  background-color: var(--Alabaster);
-  justify-content: space-evenly;
-}
-
-.box-content{
-  line-height: 6px;
-  font-size: 10px;
-}
-.box-content h4{
+  background-color: var(--White) !important;
   color: var(--Marineblue);
 }
 
-.box-content p{
-  color: var(--Coolgray);
-}
-.btn-container{
-  margin-top: 2rem;
-}
+
 .btn-container a{
   background-color: var(--Marineblue);
   color: var(--Lightblue);
   border: none;
   text-decoration: none;
 }
-
-.form-check-input{
-    background-color: white;
-}
-
 .btn-container a:hover{
   background-color: var(--Marineblue);
   color: var(--Lightblue);
   opacity: .9;
-
 }
+
 /* madia query */
 
 @media (min-width: 768px) and (max-width: 900px){
@@ -239,33 +218,24 @@ p {
   .nav-content h5 {
     color: var(--White);
   }
-  .box{
-    flex-direction: row;
-    height: 10vh;
-    justify-content: space-between;
-    /* align-items: flex-start; */
-    padding: 10px 0 10px 10px;
-    width: 70vh;
-    font-size: 1rem;
-  }
-  /* .row .box{
-    justify-content:last baseline;
-  } */
 
-  .box-content  h4{
-    font-size: 16px;
-    /* align-items: flex-start; */
-  }
-.main-section{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.btn-container :nth-child(1){
-    background: none;
-    color: var(--Coolgray);
-}
-.form-check-input{
-    background-color: white;
-}
+  .box{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 18vh;
+    padding: 10px 0 10px 10px;
+    }
+    .box-content h4{
+      font-size: 1rem;
+    }
+    .main-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .go-back{
+      background-color: var(--Marineblue) !important;
+      color: var(--White) !important;
+    }
 }
